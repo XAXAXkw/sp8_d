@@ -2,7 +2,7 @@
     <div>
 
 Total Starships : {{ total }}
-<p>Loaded : {{  this.$store.state.SHIPS.length+1 }}</p>
+<p>Loaded : {{  this.$store.state.SHIPS.length }}</p>
 <hr />
 
 
@@ -42,10 +42,9 @@ import { mapActions,mapMutations,mapState } from 'vuex';
 
     export default {
         name:'ListComp',
-        created(){
-            this.getData()
-        },
+     
         mounted() {
+
     this.scrollMe()},
 
         data(){

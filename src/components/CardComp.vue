@@ -2,9 +2,9 @@
 
     <div v-if="show">
     <div class="bkg">
-    <div class="container d-flex mt-4">     <router-link to="/list" >    <button class="btn btn-sm btn-danger align-self-right"
+    <div class="container d-flex mt-4">        <button class="btn btn-sm btn-danger align-self-right"
      @click="show=false"
-     >X</button></router-link>
+     >X</button>
   </div>
     
 </div>

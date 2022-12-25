@@ -1,12 +1,12 @@
 <template>
     <div class="logger">
         <div><h6 @click="show=!show">LOGIN</h6></div>
-<div class="container border rounded-2 bg-dark border-warning w-50  " v-if="show">
+<div class="container border rounded-2 bg-dark border-warning p-2 " v-if="show">
 <div class="container">
 
-<div class="row">email :<input/></div>
+    <p><input type="text" placeholder="Email" v-model="email" /></p>
+  <p><input type="password" placeholder="Password" v-model="password" /></p>
 
-<div class="row">password :<input/></div>
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-<div><button class="btn btn-sm btn-warning m-2">REGISTER</button></div>
+<div><button class="btn btn-sm btn-warning m-2" @click="register">REGISTER</button></div>
 
 <p>Or create  <a href="#">new user</a>.</p>
 </div>
@@ -23,11 +23,28 @@
 </template>
 
 <script>
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+
     export default {
         name:'RegisterComp',
         data(){
             return{
-                show:false
+                show:false,email:'', 
+            password:''
+            }
+        },
+        methods:{
+            register(){
+           
+      createUserWithEmailAndPassword(getAuth(),this.email, this.password) 
+      .then(() => {
+       alert('Successfully registered!');
+
+      })
+      .catch(error => {
+        console.log(error.code)
+        alert(error.message);
+      });
             }
         }
     }

@@ -30,7 +30,12 @@ export default createStore({
       //state.nextUrl=(payload.next.slice(-4).replace(/[^0-9]/g,''))-1;
       state.total = payload.count;
       for(let item in payload.results){
-      state.SHIPS.push(payload.results[item]);
+
+        if(state.SHIPS.length<state.total){
+                state.SHIPS.push(payload.results[item]);
+        }
+
+
       }
   
 
