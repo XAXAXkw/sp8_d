@@ -1,32 +1,17 @@
 <template>
-  <RegisterComp />
-  <nav>
-  <div class="container"><img src="./assets/star-wars.svg" class="logosw"/>
-  <p>- CacaoLast Edition -</p></div>
-
-    <router-link to="/">Home</router-link> | 
-    <router-link @click="getData" to="/list">Starships</router-link> |
-
-  </nav>
-  <router-view/>
+<HomeView />
+<router-view></router-view>
 </template>
+<script>
 
-<script >
-import RegisterComp from './components/RegisterComp.vue'
-import { mapActions } from 'vuex';
+import HomeView from '../src/views/HomeView.vue'
 
 export default{
   name:'app',
   components:{
-    RegisterComp
-  },
-  methods:{
-    ...mapActions(['getData'])
+    HomeView
   }
-  
 }
-
-
 </script>
 
 <style>
@@ -74,3 +59,6 @@ nav a.router-link-exact-active {
   margin-top: 10px;
 }
 </style>
+
+
+

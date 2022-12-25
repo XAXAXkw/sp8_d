@@ -1,14 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import SplashComp from '../components/SplashComp.vue'
+
 
 
 const routes = [
  
-   {
-    path: '/',
-    name: 'splashcomp',
-    component: SplashComp
-  },
+
   {
     path: '/card/:id',
     name: 'card',
@@ -18,6 +14,11 @@ const routes = [
     path: '/list',
     name: 'list',
     component: () => import('../components/ListComp.vue')
+  }, 
+   {
+    path: '/',
+    name: 'splash',
+    component: () => import('../components/SplashComp.vue')
   },
 
   {

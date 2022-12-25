@@ -1,7 +1,7 @@
 <template>
     <div>
-    <h1 to="/">Splash</h1>
-
+ 
+<div class="bkg">    </div>
 
 
     </div>
@@ -13,6 +13,20 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+
+
+.bkg{
+    position:absolute;
+
+    background-image: url('../assets/bkg.svg');
+    width:100%;
+    min-height:100%;
+    background-repeat:no-repeat;
+    background-size: cover;
+
+}
+
+
 
 </style>

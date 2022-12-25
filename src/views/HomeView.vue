@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <RegisterComp />
+  <nav>
+  <div class="container"><img src="../assets/star-wars.svg" class="logosw"/>
+  <p>- CacaoLast Edition -</p></div>
+
+    <router-link to="/">Home</router-link> | 
+    <router-link @click="getData" to="/list">Starships</router-link> |
+
+  </nav>
+
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script >
+import RegisterComp from '../components/RegisterComp.vue'
+import { mapActions } from 'vuex';
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+export default{
+  name:'HomeView',
+  components:{
+    RegisterComp
+  },
+  methods:{
+    ...mapActions(['getData'])
   }
+  
 }
+
+
 </script>
+
+

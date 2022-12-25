@@ -7,7 +7,7 @@ import axios from 'axios'
 export default createStore({
   state: {
     
-      SHIPS:[],shipUrl:'',nextUrl:'',user:{loggedIn:false,data:null},total:0
+      SHIPS:[],shipUrl:'',nextUrl:'',user:{loggedIn:false,data:null},total:0,enter:true
    
   },
   getters: {
